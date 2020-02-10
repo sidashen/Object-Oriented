@@ -1,7 +1,7 @@
 public class Person {
-  public int id;
-  public String name;
-  public int age;
+  private int id;
+  private String name;
+  private int age;
 
   public Person (int id, String name, int age) {
     this.id = id;
@@ -9,8 +9,32 @@ public class Person {
     this.age = age;
   }
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
   public String introduce (String name, int age) {
-    String description = "My name is" + name + ". I am " + age + "years old.";
+    String description = "My name is" + this.getName() + ". I am " + this.getAge() + "years old.";
     return description;
   }
 
