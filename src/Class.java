@@ -15,8 +15,16 @@ public class Class {
   }
 
   public void assignLeader(Student student) {
-    this.leader = student.getName();
+    if (appendMember(student)) {
+      this.leader = student.getName();
+    } else {
+      System.out.println("It is not one of us.");
+    }
   }
 
+  public boolean appendMember(Student student) {
+    student.getKlass().number = this.number;
+    return true;
+  }
 }
 
