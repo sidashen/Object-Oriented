@@ -43,4 +43,8 @@ public class Teacher extends Person {
     return statement;
   }
 
+  public String personIntroduce() {
+    return super.introduce();
+  }
+
 }

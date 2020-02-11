@@ -10,7 +10,7 @@ public class Student extends Person{
 
   public void setKlass(Class klass) { this.klass = klass; }
 
-  public String introduce () {
+  public String introduce() {
     if (this.klass.getLeader().equals(this.getName())) {
       return "My name is" + this.getName() + ". I am " + this.getAge() + "years old.  " +
         "I am a Student.  I am Leader of Class" + this.getKlass() + ".";
@@ -18,6 +18,10 @@ public class Student extends Person{
       return "My name is" + this.getName() + ". I am " + this.getAge() + "years old.  " +
           "I am a Student. I am at Class" + this.getKlass() + ".";
     }
+  }
+
+  public String personIntroduce() {
+    return super.introduce();
   }
 
 }
