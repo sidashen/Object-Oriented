@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Teacher extends Person {
   private ArrayList classes;
-  private Class klass;
 
   public Teacher(int id, String name, int age, ArrayList classes) {
     super(id, name, age);
@@ -30,8 +29,17 @@ public class Teacher extends Person {
     return description;
   }
 
-  public boolean isTeaching(Student student) {
-    return classes.contains(student.getKlass().getNumber());
+  public String[] isTeaching(Student student) {
+    String[] statement = new String[2];
+    if (classes.contains(student.getKlass().getNumber())) {
+      statement[0] = "I am " + this.getName() + ". I know " + student.getName()
+        + "has joined Class" + this.getClass() + ".";
+    }
+    if (student.getKlass().getLeader().equals(student.getName())) {
+      statement[1] = "I am " + this.getName() + ". I know " + student.getName()
+        + "become Leader of Class" + this.getClass() + ".";
+    }
+    return statement;
   }
-  
+
 }
