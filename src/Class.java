@@ -14,6 +14,14 @@ public class Class {
     return leader;
   }
 
+  public int getNumber() {
+    return number;
+  }
+
+  public void setNumber(int number) {
+    this.number = number;
+  }
+
   public void assignLeader(Student student) {
     if (appendMember(student)) {
       this.leader = student.getName();
@@ -26,5 +34,14 @@ public class Class {
     student.getKlass().number = this.number;
     return true;
   }
+
+  public boolean isIn(Student student) {
+    if (student.getKlass().number == this.number) {
+      return true;
+    } else {
+        return false;
+    }
+  }
+
 }
 
