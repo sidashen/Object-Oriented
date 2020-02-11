@@ -21,7 +21,7 @@ public class Student extends Person{
         "I am a Student.  I am Leader of Class" + this.getKlass() + ".";
     } else {
         description = "My name is" + this.getName() + ". I am " + this.getAge() + "years old.  " +
-        "I am a Student. I am at Class" + this.getKlass() + ".";
+          "I am a Student. I am at Class" + this.getKlass() + ".";
     }
     return description;
   }
