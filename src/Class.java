@@ -1,38 +1,31 @@
+import java.util.ArrayList;
+
 public class Class {
   private int number;
-  private String leader;
+  private Student leader;
+  private ArrayList<Student> studentArrayList;
 
-  public Class (int number) {
-    this.number = number;
-  }
+  public Class (int number) { this.number = number; }
 
-  public void setLeader(String leader) {
-    this.leader = leader;
-  }
+  public void setLeader(Student leader) { this.leader = leader; }
 
-  public String getLeader() {
-    return leader;
-  }
+  public Student getLeader() { return leader; }
 
-  public int getNumber() {
-    return number;
-  }
+  public int getNumber() { return number; }
 
-  public void setNumber(int number) {
-    this.number = number;
-  }
+  public void setNumber(int number) { this.number = number; }
 
   public void assignLeader(Student student) {
-    if (appendMember(student)) {
-      this.leader = student.getName();
+    if (studentArrayList.contains(student)) {
+      this.setLeader(student);
+      student.introduce();
     } else {
       System.out.println("It is not one of us.");
     }
   }
 
-  public boolean appendMember(Student student) {
-    student.getKlass().number = this.number;
-    return true;
+  public void appendMember(Student student) {
+    studentArrayList.add(student);
   }
 
   public boolean isIn(Student student) {
