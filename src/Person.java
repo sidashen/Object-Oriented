@@ -33,7 +33,7 @@ public class Person {
     return age;
   }
 
-  public String introduce (String name, int age) {
+  public String introduce() {
     String description = "My name is" + this.getName() + ". I am " + this.getAge() + "years old.";
     return description;
   }
