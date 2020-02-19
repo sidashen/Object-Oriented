@@ -30,17 +30,21 @@ public class Teacher extends Person {
     }
   }
 
-  public String[] isTeaching(Student student) {
+  public boolean isTeaching(Student student) {
     String[] statement = new String[2];
+    boolean flag = false;
     if (classes.contains(student.getKlass())) {
       statement[0] = "I am " + student.getName() + ". I know " + student.getName()
         + "has joined Class" + student.getKlass().getNumber() + ".";
+      System.out.println(statement[0]);
+      flag = true;
     }
     if (student.getKlass().getLeader().equals(student)) {
       statement[1] = "I am " + student.getName() + ". I know " + student.getName()
         + "become Leader of Class" + student.getKlass().getNumber() + ".";
+      System.out.println(statement[1]);
     }
-    return statement;
+    return flag;
   }
 
   public String personIntroduce() {
